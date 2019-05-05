@@ -7,7 +7,6 @@ const paths = {
   build: path.resolve('./dist'), // absolute path required.
   main: `./src/index.js`,
   src: `./src`,
-  public: `./public`,
 }
 
 module.exports = {
@@ -38,6 +37,12 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           'css-loader'
         ]
+      },
+      {
+        test: /\.(html)$/,
+        use: {
+          loader: 'html-loader',
+        }
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
@@ -71,7 +76,7 @@ module.exports = {
       filename: 'style.[contenthash].css'
     }),
     new HtmlWebpackPlugin({
-      inject: false,
+      inject: true,
       template: paths.src + '/index.html'
     }),
   ]

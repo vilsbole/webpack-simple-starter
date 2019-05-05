@@ -3,13 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.chunks.main.css %>">
   </head>
   <body>
     <div>
       <h3>Hello from <pre class="inline code">./public/index.html</pre></h3>
     </div>
-    <!-- Webpack generates the bundle and replaces the src name -->
-    <script type="text/javascript" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
   </body>
 </html>
